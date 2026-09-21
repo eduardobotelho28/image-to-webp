@@ -9,5 +9,9 @@
   },
   "scripts": {
     "worker": "node src/worker.js"
+  },
+  "dependencies": {
+    "bullmq": "^6.3.8",
+    "ioredis": "^6.0.0"
   }
 }
