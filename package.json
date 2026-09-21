@@ -1,0 +1,13 @@
+{
+  "name": "to-webp-worker",
+  "version": "0.1.0",
+  "description": "CLI that queues images and a BullMQ worker that converts them to WebP",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "worker": "node src/worker.js"
+  }
+}
