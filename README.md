@@ -36,7 +36,7 @@ image-worker/
 ## Pré-requisitos
 
 - Node.js 20+
-- Docker 
+- Docker Desktop
 
 ## Como rodar
 
@@ -75,9 +75,12 @@ Queued 3 jobs.
 
 Os arquivos `.webp` aparecem em `output/` conforme o worker processa cada imagem.
 
-### Opção 2 — Tudo no Docker (Redis + worker)
+### Opção 2 — Redis e worker no Docker, CLI no host
+
+O Docker Compose sobe Redis e worker dockerizados, sem precisar instalar nada além do Docker para essa parte. Mas a CLI roda localmente (fora do container) e depende de pacotes do `node_modules`, então o `npm install` continua necessário:
 
 ```bash
+npm install
 docker compose up -d --build
 ```
 
