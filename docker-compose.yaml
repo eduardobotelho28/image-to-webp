@@ -7,5 +7,16 @@ services:
     volumes:
       - redis-data:/data
 
+  worker:
+    build: .
+    container_name: image-worker-worker
+    depends_on:
+      - redis
+    environment:
+      REDIS_HOST: redis
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+
 volumes:
   redis-data:

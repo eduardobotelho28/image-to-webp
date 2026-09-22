@@ -2,7 +2,7 @@ import { Worker } from "bullmq";
 import { processImage } from "./processor.js";
 
 const connection = {
-  host: "localhost",
+  host: process.env.REDIS_HOST || "localhost",
   port: 6379,
 };
 
@@ -14,7 +14,9 @@ const worker = new Worker(
     await processImage({ inputPath, outputPath });
     console.log(`Saved: ${outputPath}`);
   },
-  { connection }
+  { connection,
+    concurrency: 4
+   }
 );
 
 worker.on("completed", (job) => {
