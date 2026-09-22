@@ -36,7 +36,7 @@ image-worker/
 ## Pré-requisitos
 
 - Node.js 20+
-- Docker Desktop
+
 
 ## Como rodar
 
